@@ -1,0 +1,203 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Dancing Script', cursive;
+    /* font-family: 'Press Start 2P', cursive; */
+}
+
+.center{
+    max-width: 1280px;
+    padding: 0 2%;
+    margin: 0 auto;
+}
+
+.none{
+    display: none;
+}
+
+/*  */
+
+html,body{
+    height: 100%;
+    overflow: hidden;
+}
+
+body{
+    background-image: url('../img/bgs.jpg');
+    background-position: center;
+    background-size: cover;
+}
+/* header */
+
+header{
+    padding: 5px 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+header h2{
+    font-size: 42px;
+    text-align: center;
+}
+
+header h2 span{
+    color: #d41f34;
+}
+
+header p{
+    text-align: center;
+    color:#d41f34;
+    font-size: 25px;
+}
+
+/*  */
+.start{
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.start h3{
+    font-size: 47px;
+    
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+}
+
+form input{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 25px;
+    padding-left: 10px;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 10px;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+}
+
+form input:focus{
+    outline: 0;
+}
+
+.start button{
+    margin-top: 15px;
+    width: 40%;
+    height: 40px;
+    font-size: 22px;
+    border: 0;
+    border-radius: 20px;
+    color: rgb(204, 201, 201);
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.3s;
+}
+
+.start button:focus{
+    outline: 0;
+}
+
+/* ingame */
+
+.game{
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+.game h2{
+    margin: 25px 0;
+    font-size: 40px;
+}
+
+.game h2 span{
+    color: #d41f34;
+}
+
+.game h2::first-letter{
+    color: #d41f34;
+}
+
+.game .player{
+    margin: 25px;
+    
+}
+
+.game .player h5{
+    text-transform: capitalize;
+    font-size: 40px;
+}
+
+.game .player h5::first-letter{
+    color: #d41f34;
+}
+
+
+.box__item{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#um, #dois{
+    transition: 1s;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 30px;
+    margin: 10px auto;
+    border-radius: 40px;
+    padding: 10px 20px;
+
+}
+
+#um::first-letter{
+    color: #f10d0d;
+}
+
+#dois::first-letter{
+    color: #f10d0d;
+}
+
+.game button span{
+    color: #d41f34;
+}
+.game button{
+    margin-top: 15px;
+    width: 50%;
+    height: 50px;
+    font-size: 27px;
+    border: 0;
+    border-radius: 25px;
+    color: rgb(204, 201, 201);
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.3s;
+}
+
+.game button::first-letter{
+    color: #d41f34;
+}
+
+.game button:focus{
+    outline: 0;
+}
+
+
+
