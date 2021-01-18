@@ -19,10 +19,10 @@ $(function(){
 
                 var name__local = $('#pls');
 
-                changeName(pls);//alterar nome por rodada
+                changeName(name__local);//alterar nome por rodada
 
                 $('#generate').click(function(){
-                    changeName(pls);
+                    changeName(name__local);
                     replaceRandom();
                 });
 
