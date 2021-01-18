@@ -69,8 +69,6 @@ $(function(){
         "Encostar",
         "Beijar",
         "Massagear",
-        "Empurrar",
-        "Cutucar",
         "Apalpar",
         "Beliscar",
         "Deslizar",
