@@ -23,11 +23,7 @@ $(function(){
 
                 $('#generate').click(function(){
                     changeName(name__local);
-                    replaceRandom();
-                });
-
-                pls.click(function(){
-                    alert('funciona');
+                    writeRandom();
                 });
 
              });
@@ -60,62 +56,157 @@ $(function(){
 
     //sorteio e itens
 
-    const action = [
-        "Tocar",
-        "Cheirar",
-        "Acariciar",
-        "Apertar",
-        "Lamber",
-        "Encostar",
-        "Beijar",
-        "Massagear",
-        "Apalpar",
-        "Beliscar",
-        "Deslizar",
-        "Chupar",
-        "Mordiscar"
-    ];
-
-    const body = [
-        "Orelha",
-        "Pescoço",
-        "Ombro",
-        "Braço",
-        "Coxa",
-        "Lábios",
-        "Bunda",
-        "Costas",
-        "Busto",
-        "Onde Ele quiser",
-        "Onde Ela quiser",
-    ];
-
     const challenge = [
-        "Beijo sexy por 1 minuto",
-        "Massagem no corpo outro player",
-        "Beijar Lentamente o outro Player",
-        "Deixe o outro player escolher"
+        {
+            'id': 1,
+            'action':'Acariciar',
+            'body':[
+                "Orelha",
+                "Peito",
+                "Bunda",
+                "Coxa",
+                "Rosto",
+                "Costas"
+            ]
+        },
+
+        {
+            'id': 2,
+            'action':'Apertar',
+            'body':[
+                "Peito",
+                "Bunda",
+                "Coxa",
+                "Bochecha"
+            ]
+        },
+
+        {
+            'id': 3,
+            'action':'Mordiscar',
+            'body':[
+                "Peito",
+                "Orelha",
+                "Boca",
+                "Pescoço",
+                "Bochecha",
+                "Orelha"
+            ]
+        },
+
+        {
+            'id': 4,
+            'action':'Massagear',
+            'body':[
+                "Peito",
+                "Bunda",
+                "Coxa",
+                "Ombro",
+                "Mão",
+                "Pés",
+                "Costas",
+                "Barriga",
+                "Pernas",
+                "Braços",
+                "Rosto"
+            ]
+        },
+
+        {
+            'id': 5,
+            'action':'Apalpar',
+            'body':[
+                "Peito",
+                "Bunda",
+                "Coxa",
+                "Ombro"
+            ]
+        },
+
+        {
+            'id': 6,
+            'action':'Deslizar (A mão)',
+            'body':[
+                "Nuca",
+                "Pescoço",
+                "Peito",
+                "Coxa",
+                "bunda",
+                "Perna",
+                "Barriga",
+                "Costa",
+                "Braços",
+                "Ombros",
+                "Rosto",
+                "Cabelo"
+            ]
+        },
+
+        {
+            'id': 7,
+            'action':'Beijar',
+            'body':[
+                "Lábios",
+                "Pescoço",
+                "Peito",
+                "Barriga",
+                "Costa",
+                "Braços",
+                "Bochecha",
+            ] 
+        },
+
+        {
+            'id': 8,
+            'action':'Desafio',
+            'body':[
+                "Beijo sexy por 1 minuto",
+                "Massagem no corpo outro jogador(a)",
+                "Beijar Lentamente o outro jogador(a)",
+                "Deixe o outro jogador(a) escolher"
+            ] 
+        }
+        
+
     ];
 
-    var resultAction;
-    var resultBody;
-    var resultChallenge;
+    // variaveis para as functions
 
-    function replaceRandom(){
-        resultAction = Math.floor(Math.random() * 13);
-        $('#um').html(action[resultAction]);
-        resultBody = Math.floor(Math.random() * 11);
-        $('#dois').html(body[resultBody]);
-        // resultChallenge = Math.floor(Math.random() * 4);
+    var itemSorteado;
+    var actionSorteado;
+    var bodySorteado;
+    var actionPast;
 
-        
-        
-        // $('three').html(challenge[resultChallenge]);
+    //cria um resultado aleatorio de ação + local
+    function randomize(){
+        //escolhendo bloco
+        itemSorteado = challenge[Math.floor(Math.random() * 8)]; 
+        //nomeando ação baseada no bloco
+        actionSorteado = itemSorteado.action;
+        //escolhendo body do bloco baseado na quantia de body
+        bodySorteado = itemSorteado.body[Math.floor(Math.random() * (itemSorteado.body.length))];
+    }
+
+    //verifica se não vai repetir a ação
+    function verifiRandomize(){
+        while(true){
+            if(actionSorteado == actionPast){
+                randomize();
+            }else{
+                actionPast = actionSorteado;
+                break;
+            };
+        };
     };
-    
-    
+
+    function writeRandom(){
+        randomize();
+        verifiRandomize();
+
+        //escrever texto nas box;
+        $('#um').html(actionSorteado);
+        $('#dois').html(bodySorteado);
+        
+    };
 
 });
-
-
-
